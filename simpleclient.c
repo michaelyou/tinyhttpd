@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
@@ -25,9 +26,10 @@ int main(int argc, char *argv[])
   perror("oops: client1");
   exit(1);
  }
- write(sockfd, &ch, 1);
- read(sockfd, &ch, 1);
- printf("char from server = %c\n", ch);
- close(sockfd);
- exit(0);
+  write(sockfd, &ch, 1);
+  read(sockfd, &ch, 1);
+  printf("char from server = %c\n", ch);
+  close(sockfd);
+  exit(0);
 }
+
